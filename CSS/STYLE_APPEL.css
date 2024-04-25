@@ -1,0 +1,146 @@
+#haut_page{
+	background-image: url("../IMG/ADD_BACKGROUND.jpg");
+	background-size: contain;
+	font-family: Copperplate Gothic;
+	margin: 15px 0;
+	height: 65px;
+	justify-content: center;
+	align-items: center;
+}
+
+#createurs{
+	color: white;
+}
+
+body
+{	
+	background-color: black;
+	margin: 0 auto;
+}00
+
+#contenu{
+	display: inline-block;
+	widht: 48%;
+}
+
+#connexion{
+	position: absolute;
+	left: 90%;
+	width: 60px;
+	height: 60px;
+	background-color: #e9e9e9;
+	border-radius: 50%;
+	margin: 1%;
+	text-align: center;
+}
+
+.menu {
+    display: flex;                /* Transformation en flexbox */
+    padding:0;                    /* Suppression des marges internes 	/* Ajout de la couleur d'arrière-plan */
+    justify-content: space-evenly;/* Alignements des liens dans le menu */
+}
+
+.menu li {
+    list-style-type: none ;       /* Suppression des puces */
+  
+}
+
+.menu a {
+    display:block;                /* Transformation en block */
+    min-width: 120px;             /* Largeur minimale des liens */   
+    
+    margin: 0.5rem;               /* Marges externes */
+    padding: 0.4rem 0;            /* Marges internes */
+    text-align: center;           /* Centrage du texte */   
+    background-color: #0051ff;    /* Arrière-plan */
+    color: #fff;                  /* Couleur du texte */
+    text-decoration: 0;        /* Suppression du soulignement */
+    border: 1px solid #fff;       /* Ajout d'une bordure */
+    border-radius: 2px;           /* Arrondis des bordures */
+    
+    transition: all 1s ;          /* Ajout des effets de transition */
+}
+
+.menu a.actif {    
+    background-color: #000 ; 
+    color: #1ae129;
+    border-color: #1ABC9C ;
+}
+
+.menu a:hover,
+.menu a:hover.actif{
+    background-color: #00d8ff;
+    color: #000;
+    border-color: #ffe843;
+}
+
+#titre_page{
+	color: white;
+	background-color: #359aff;
+	border: 2px solid white;
+	border-radius: 5px;
+	text-align: center;
+	position: relative;
+	width: 25%;
+	left: 37.5%;
+}
+
+footer{
+	text-align: center;
+	color: white;
+	padding: 2%;
+}
+
+/*Siuuuuuuuuuuuuuuuuuuuuuuuuu */
+
+/* Styles pour le nouveau tableau d'appel */
+..presence-checkbox {
+    display: none; /* Masquer la case à cocher */
+}
+
+.presence-label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: red;
+}
+
+.presence-checkbox:checked + .presence-label {
+    background-color: green;
+}
+
+.presence-label_2 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: red;
+}
+
+.presence-checkbox:checked + .presence-label_2 {
+    background-color: blue;
+}
+
+.tableau-style tr {                    									/*couleur tableau*/
+    background-color: white; /* Couleur de fond pour les lignes */
+    color: bleu; /* Couleur du texte pour les lignes */
+	position : relative;
+	left : 500px;
+}
+
+/* Styles pour les en-têtes de colonne */
+.tableau-style th {
+    background-color: #333; /* Couleur de fond pour les en-têtes de colonne */
+    color: white; /* Couleur du texte pour les en-têtes de colonne */
+}
+
+#btnValider{
+	padding : 5px;
+	position : relative;
+	margin-top : 20px;
+	left : 560px;
+}
+

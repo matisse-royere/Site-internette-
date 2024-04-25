@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset ="utf-8" />
+		<title>ADD Academy</title>
+		
+		<link rel="stylesheet" type="text/css" href="CSS/STYLE_APPEL.css">
+	</head>
+	
+	<body>
+		<div id="createurs"><p><h5><center>CREATEURS : AMANDINE, ADRIEN, MATISSE</h5></p></div>
+		<div id="connexion"><a href="CONNEXION.html"><img src="IMG/logo_user.png" alt="Image" height="60" widht="60"></a></div>
+		<div id="titre_page"><h1>APPEL</h1></div>
+	<div id="haut_page"></div>
+		<ul class="menu">
+				  <li>
+					<a href="ACCUEIL.html">ACCUEIL</a>
+				  </li>
+				  <li>
+					<a href="#"class="actif">APPEL</a>
+				  </li>
+				  <li>
+					<a href="EDT.html">EMPLOI DU TEMPS</a>
+				  </li>
+				  <li>
+					<a href="MESSAGERIE.html">MESSAGERIE</a>
+				  </li>
+		</ul>
+
+
+    <!-- Nouveau tableau pour l'appel -->
+<table class="tableau-style">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Présence</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Smith</td>
+            <td>John</td>
+            <td><input type="checkbox" id="person1" class="presence-checkbox"><label for="person1" class="presence-label"></label></td>
+        </tr>
+        <tr>
+            <td>Doe</td>S
+            <td>Jane</td>
+            <td><input type="checkbox" id="person2" class="presence-checkbox"><label for="person2" class="presence-label"></label></td>
+        </tr>
+        <tr>
+            <td>Johnson</td>
+            <td>Michael</td>
+            <td><input type="checkbox" id="person3" class="presence-checkbox"><label for="person3" class="presence-label"></label></td>
+        </tr>
+        <tr>
+            <td>Williams</td>
+            <td>Emily</td>
+            <td><input type="checkbox" id="person4" class="presence-checkbox"><label for="person4" class="presence-label"></label></td>
+        </tr>
+        <tr>
+            <td>Brown</td>
+            <td>David</td>
+            <td><input type="checkbox" id="person5" class="presence-checkbox"><label for="person5" class="presence-label"></label></td>
+        </tr>
+        <tr>
+            <td>Smith</td>
+            <td>John</td>
+            <td><input type="checkbox" id="person1" class="presence-checkbox"><label for="person1" class="presence-label"></label></td>
+        </tr>
+		<tr>
+    <td>Johnson</td>
+    <td>Mary</td>
+    <td><input type="checkbox" id="person6" class="presence-checkbox"><label for="person6" class="presence-label"></label></td>
+</tr>
+<tr>
+    <td>Doe</td>
+    <td>John</td>
+    <td><input type="checkbox" id="person7" class="presence-checkbox"><label for="person7" class="presence-label"></label></td>
+</tr>
+<tr>
+    <td>Williams</td>
+    <td>Jane</td>
+    <td><input type="checkbox" id="person8" class="presence-checkbox"><label for="person8" class="presence-label"></label></td>
+</tr>
+<tr>
+    <td>Brown</td>
+    <td>David</td>
+    <td><input type="checkbox" id="person9" class="presence-checkbox"><label for="person9" class="presence-label"></label></td>
+</tr>
+<tr>
+    <td>Lee</td>
+    <td>Sarah</td>
+    <td><input type="checkbox" id="person10" class="presence-checkbox"><label for="person10" class="presence-label"></label></td>
+</tr>
+<tr>
+    <td>Garcia</td>
+    <td>Michael</td>
+    <td><input type="checkbox" id="person11" class="presence-checkbox"><label for="person11" class="presence-label"></label></td>
+</tr>
+<tr>
+    <td>Clark</td>
+    <td>Emily</td>
+    <td><input type="checkbox" id="person12" class="presence-checkbox"><label for="person12" class="presence-label"></label></td>
+</tr>
+	
+
+
+
+        <!-- Autres lignes du tableau -->
+		
+    </tbody>
+</table>
+
+								<!-- Bouton Valider -->
+<button id="btnValider">Valider</button>
+
+	<script>
+		document.getElementById('btnValider').addEventListener('click', function() {              <!--envoyer base de donner -->
+			var checkboxes = document.querySelectorAll('.presence-checkbox');		 			 <!-- \-> sa marche pas  -->
+			var presences = [];
+
+			checkboxes.forEach(function(checkbox, index) {
+				var presence = {
+					nom: checkbox.parentNode.previousElementSibling.previousElementSibling.textContent,
+					prenom: checkbox.parentNode.previousElementSibling.textContent,
+					present: checkbox.checked ? 1 : 0
+				};
+				presences.push(presence);
+			});
+
+			// Envoi des données de présence à la base de données (ici, à titre d'exemple, affichage dans la console)
+			console.log(presences);
+			//écrire code pour envoyer  données à votre backend et les enregistrer dans  base de données SQLite
+		});
+	</script>
+<script>
+    document.getElementById('btnValider').addEventListener('click', function() {
+        // Désactiver les cases à cocher
+        var checkboxes = document.querySelectorAll('.presence-checkbox');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.disabled = true;
+        });
+
+        // Créer le message "L'appel a bien été fait"
+        var message = document.createElement('h1');
+        message.textContent = "APPEL VALIDE";
+        
+        // Ajouter une classe au message pour appliquer le style CSS
+        message.classList.add('success-message');
+
+        // Ajouter le message à un conteneur à droite du tableau
+        var container = document.createElement('div');
+        container.classList.add('message-container');
+        container.appendChild(message);
+        document.body.appendChild(container);
+    });
+</script>
+
+<style>
+    .success-message {
+        color: white;
+        text-align : center;
+		position : absolute;
+    }
+</style>
+								<!--   FIN Bouton Valider   -->
+
+</body>
+</html>
+
